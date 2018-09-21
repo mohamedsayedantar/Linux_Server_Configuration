@@ -5,25 +5,25 @@
   
 
 ## 1- the server
-  by using Ubuntu Linux server instance on Amazon Lightsail, follow these steps:-
-    1. creat an acount on `https://aws.amazon.com` if you don not have one. 
-    2. log into `https://lightsail.aws.amazon.com/ls/webapp/home/instances` . 
-    3. click on `create instance` . 
-    4. choose `os only`, `ubuntu` . 
-    5. choose your instance plan, then give your instance a hostname. 
-    6. click create, and wait for the instance to start up. 
-    for more information `https://serverpilot.io/docs/how-to-create-a-server-on-amazon-lightsail`.
+  by using Ubuntu Linux server instance on Amazon Lightsail, follow these steps:- 
+  1. creat an acount on `https://aws.amazon.com` if you don not have one. 
+  2. log into `https://lightsail.aws.amazon.com/ls/webapp/home/instances` . 
+  3. click on `create instance` . 
+  4. choose `os only`, `ubuntu` . 
+  5. choose your instance plan, then give your instance a hostname. 
+  6. click create, and wait for the instance to start up. 
+  for more information `https://serverpilot.io/docs/how-to-create-a-server-on-amazon-lightsail`. 
     
     
 ## 2- SSH Connection
   you can click on `Connect using SSH` and use the online terminal,
-  or follow these steps to use your own terminal:-
-    1. go down and click on `Account page`, then click on `SSH Keys`.
-    2. go down and click on `Download` your Default Private Key.
-    3. move the file you downloaded to `~/.ssh/` using `mv` command.
-    4. rename this file to be `key.rsa`, or any name but with `.rsa` not `.pem`.
-    5. perform this command `chmod 600 ~/.ssh/lightsail_key.rsa` in your terminal.
-    6. to log into your machine type `ssh ubuntu@34.205.27.161 -i ~/.ssh/key.rsa`, as my ip=`34.205.27.161` and my file name is `key.rsa`.
+  or follow these steps to use your own terminal:- 
+  1. go down and click on `Account page`, then click on `SSH Keys`. 
+  2. go down and click on `Download` your Default Private Key. 
+  3. move the file you downloaded to `~/.ssh/` using `mv` command. 
+  4. rename this file to be `key.rsa`, or any name but with `.rsa` not `.pem`. 
+  5. perform this command `chmod 600 ~/.ssh/lightsail_key.rsa` in your terminal. 
+  6. to log into your machine type `ssh ubuntu@34.205.27.161 -i ~/.ssh/key.rsa`, as my ip=`34.205.27.161` and my file name is `key.rsa`. 
     
     
 ## 3- new user named grader :-
