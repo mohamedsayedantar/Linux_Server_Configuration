@@ -62,7 +62,7 @@
   3. then change to grader user using `su - grader` and type your password. 
   4. add the `.ssh` file using `mkdir .ssh`. 
   5. using `touch .ssh/authorized_keys` to add the authorized_keys file. 
-  6. now copy the key inside key.rsa file and type `nano .ssh/authorized_keys` to add this key to the authorized_keys file. 
+  6. now copy the key inside `.ssh/authorized_keys` file for ubuntu user and type `nano .ssh/authorized_keys` to add this key to the authorized_keys file for grader user. 
   7. type :`chmod 700 .ssh` and `chmod 644 .ssh/authorized_keys`. 
   8. now you can restart your ssh connection using `sudo service ssh restart`. 
   9. you can now connect with `grader` using `ssh grader@18.215.131.65 -i ~/.ssh/key.rsa`.
