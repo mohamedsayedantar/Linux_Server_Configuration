@@ -11,6 +11,9 @@
     Due to the recent change with Google OAuth,the amazon lightsail addresses or IPs are not valid origins for clients, so I have used xip.io, which is a service that provides a domain name for any IP address, to bypass this rule.
 
 
+# several steps to finish the Server Configuration process :-
+
+
 ## 1- the server
   by using Ubuntu Linux server instance on Amazon Lightsail, follow these steps:- 
   1. creat an acount on `https://aws.amazon.com` if you don not have one. 
