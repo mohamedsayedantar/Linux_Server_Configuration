@@ -91,3 +91,78 @@
   4. to Quit postgreSQL use `postgres=# \q`
   5. to exit from `postgres` user use `exit`.
   
+
+## 10- Catalog App project :-
+  1. first you need to install git to clone your project :
+    
+    sudo apt-get install git
+  2. you have to move to /var/www directory using `cd /var/www`.
+  3. add FlaskApp directory using `sudo mkdir FlaskApp` then move to it `cd FlaskApp`.
+  4. now clone you project to this directory using :
+    
+    sudo git clone https://github.com/mohamedsayedantar/Item_Catalog.git 
+    
+  5. rename the Item_Catalog to FlaskApp using `sudo mv ./Item_Catalog ./FlaskApp`
+  6. change your directory to the new FlaskApp using `cd FlaskApp`
+  7. now yor path must be `/var/www/FlaskApp/FlaskApp`.
+  8. change the `project.py` file name to `__init__.py`.
+  9. change `engine = create_engine('sqlite:///categories.db')` in `database_create.py`, `lotsofcategories.py` and `__init__.py`with :
+    
+    engine = create_engine('postgresql://catalog:password@localhost/catalog')
+  
+## 11- install python and psycopg2 :-
+  1. install python using `sudo apt-get install python-pip`.
+  2. Install psycopg2 usong `sudo apt-get -qqy install postgresql python-psycopg2`.
+  3 now you can create database and add the categories and items to it using :
+  
+    sudo python database_create.py
+    sudo python lotsofcategories.py
+    
+    
+## 12- .wsgi file :-
+  1.create flaskapp.wsgi file at `/var/www/FlaskApp` using :
+    
+    cd /var/www/FlaskApp
+    sudo nano flaskapp.wsgi
+    
+  2. add the following to this file :
+  
+    #!/usr/bin/python
+    import site
+    site.addsitedir('/var/www/FlsakApp/FlaskApp/venv/lib/pythonX.X/site-packages')
+    import sys
+    import logging
+    logging.basicConfig(stream=sys.stderr)
+    sys.path.insert(0,"/var/www/FlaskApp/")
+
+    from FlaskApp import app as application
+    application.secret_key = 'Add your secret key'
+
+
+## 13- configure the Virtual Host :-
+  1. first you have to create FlaskApp.conf using :
+    
+    sudo nano /etc/apache2/sites-available/FlaskApp.conf
+    
+  2. then add these lines to this file :
+    
+    <VirtualHost *:80>
+        ServerName  18.215.131.65.xip.io
+        ServerAdmin mohamedsayed99.ms@gmail.com
+        ServerAlias 18.215.131.65.xip.io
+        WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+        <Directory /var/www/FlaskApp/FlaskApp/>
+                Order allow,deny
+                Allow from all
+        </Directory>
+        Alias /static /var/www/FlaskApp/FlaskApp/static
+        <Directory /var/www/FlaskApp/FlaskApp/static/>
+                Order allow,deny
+                Allow from all
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    
+  3. now you can enable your virtual host using `sudo a2ensite FlaskApp`.
