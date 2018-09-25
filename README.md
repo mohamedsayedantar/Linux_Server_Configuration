@@ -3,6 +3,13 @@
   by securing the server from a number of attack vectors, installing and configuring the database server,
   and deploying the web applications onto it.
   
+  visit the website at [http://18.215.131.65.xip.io](http://18.215.131.65.xip.io)
+  but the static ip is `18.215.131.65`.
+  
+  Note :
+  
+    Due to the recent change with Google OAuth,the amazon lightsail addresses or IPs are not valid origins for clients, so I have used xip.io, which is a service that provides a domain name for any IP address, to bypass this rule.
+
 
 ## 1- the server
   by using Ubuntu Linux server instance on Amazon Lightsail, follow these steps:- 
