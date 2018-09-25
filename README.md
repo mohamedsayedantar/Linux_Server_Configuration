@@ -122,7 +122,7 @@
     
 ## 12- Install the virtual environment :-
 go to your app using `cd /var/www/FlaskApp/FlaskApp`, then :
-  1. Install the virtual environment using `sudo apt-get install python-virtualenv` or `sudo pip install virtualenv`.
+  1. Install the virtual environment using `sudo apt-get install python-virtualenv`.
   2. create the new virtual environment using `sudo virtualenv venv`.
   3. activate the virutal environment `source venv/bin/activate`.
     
@@ -204,4 +204,14 @@ go to your app using `cd /var/www/FlaskApp/FlaskApp`, then :
 
 
 ## 16- __init__.py edits :-
-  1. 
+  1. change the line `CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']` with this line `json.loads(open(r'/var/www/FlaskApp/FlaskApp/client_secrets.json', 'r').read())['web']['client_id']`.
+  2. change the line 69 `oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')` with              `oauth_flow = flow_from_clientsecrets('/var/www/FlaskApp/FlaskApp/client_secrets.json', scope='')`.
+  3. change `app.run(host='0.0.0.0', port=5000)` with `app.run(host="0.0.0.0")`.
+  
+  4. now you can use `sudo service apache2 restart` to restart Apache and visit the website at `http://18.215.131.65.xip.io`
+  
+  
+## sources :-
+  - `http://flask.pocoo.org/docs/0.12/installation/`
+  - `https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps`
+  - `https://stackoverflow.com/questions/49779283/permission-denied-to-generate-login-hint-for-target-domain-when-hosted-on-aws`
