@@ -110,13 +110,21 @@
     
     engine = create_engine('postgresql://catalog:password@localhost/catalog')
   
-## 11- install python and psycopg2 :-
+## 11- install pip and psycopg2 :-
   1. install python using `sudo apt-get install python-pip`.
   2. Install psycopg2 usong `sudo apt-get -qqy install postgresql python-psycopg2`.
-  3 now you can create database and add the categories and items to it using :
+  
+  3. now you can create database and add the categories and items to it using :
   
     sudo python database_create.py
     sudo python lotsofcategories.py
+    
+    
+## 12- Install the virtual environment :-
+go to your app using `cd /var/www/FlaskApp/FlaskApp`, then :
+  1. Install the virtual environment using `sudo apt-get install python-virtualenv` or `sudo pip install virtualenv`.
+  2. create the new virtual environment using `sudo virtualenv venv`.
+  3. activate the virutal environment `source venv/bin/activate`.
     
     
 ## 12- .wsgi file :-
@@ -166,3 +174,34 @@
     </VirtualHost>
     
   3. now you can enable your virtual host using `sudo a2ensite FlaskApp`.
+  4. for restarting your Apache use `sudo service apache2 restart`.
+  
+  
+## 14- Authenticate login through Google :-
+  1. go to [Google Cloud Plateform](https://console.cloud.google.com)
+  2. click on `Go to APIs overview` then choose `Credentials` then choose your project.
+  3. add `http://18.215.131.65.xip.io` to `Authorized JavaScript origins`.
+  4. and add these 3 URIs to `Authorized redirect URIs` :
+    
+    http://18.215.131.65.xip.io/
+    http://18.215.131.65.xip.io/login
+    http://18.215.131.65.xip.io/gconnect
+  5. edit the json file in the FlaskApp using `sudo nano client_secrets.json` and add these URIs to it.
+    
+  Note: you will need to add your domain to the authorized domains first. 
+  
+  
+## 15- install dependencies :-
+  perform these lines to install the requiered dependencies:
+  
+    pip install httplib2
+    pip install requests
+    pip install --upgrade oauth2client
+    pip install sqlalchemy
+    pip install flask
+    sudo apt-get install libpq-dev
+    pip install psycopg2
+
+
+## 16- __init__.py edits :-
+  1. 
