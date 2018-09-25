@@ -49,12 +49,37 @@
   6. to log into your machine type `ssh ubuntu@18.215.131.65 -i ~/.ssh/key.rsa`, as my ip=`18.215.131.65` and my file name is `key.rsa`. 
   
   
-## 3- ubdate :-
+## 3- update :-
   update your software and packages using:-
   
     sudo apt-get update
     sudo apt-get upgrade
     
+  to be sure that you are up to date use :
+  
+    sudo apt-get dist-upgrade
+    sudo shutdown -r now
+  and then log in again you have to see somthing like this :
+  
+    Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1067-aws x86_64)
+
+    * Documentation:  https://help.ubuntu.com
+    * Management:     https://landscape.canonical.com
+    * Support:        https://ubuntu.com/advantage
+
+    Get cloud support with Ubuntu Advantage Cloud Guest:
+        http://www.ubuntu.com/business/services/cloud
+
+    0 packages can be updated.
+    0 updates are security updates.
+
+    New release '18.04.1 LTS' available.
+    Run 'do-release-upgrade' to upgrade to it.
+
+
+    Last login: Tue Sep 25 10:09:51 2018 from 187.35.185.234
+    
+  be sure that `0 packages can be updated` and `0 updates are security updates`.
     
 ## 4- new user named grader :-
   1. to create a new user type `sudo adduser grader`, add the password for grader, fill the information if you want. 
