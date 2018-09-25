@@ -27,7 +27,7 @@
 # several steps to finish the Server Configuration process :-
 
 
-## 1- the server
+## 1- the server :-
   by using Ubuntu Linux server instance on Amazon Lightsail, follow these steps:- 
   1. creat an acount on `https://aws.amazon.com` if you don not have one. 
   2. log into `https://lightsail.aws.amazon.com/ls/webapp/home/instances` . 
@@ -38,7 +38,7 @@
   for more information `https://serverpilot.io/docs/how-to-create-a-server-on-amazon-lightsail`. 
     
     
-## 2- SSH Connection
+## 2- SSH Connection :-
   you can click on `Connect using SSH` and use the online terminal,
   or follow these steps to use your own terminal:- 
   1. go down and click on `Account page`, then click on `SSH Keys`. 
