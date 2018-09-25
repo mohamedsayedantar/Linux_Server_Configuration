@@ -4,7 +4,7 @@
   and deploying the web applications onto it.
   
   visit the website at [http://18.215.131.65.xip.io](http://18.215.131.65.xip.io)
-  but the static ip is `18.215.131.65` and the private ip is `172.26.12.149`.
+  while the static ip is `18.215.131.65` and the private ip is `172.26.12.149`.
   
   Note :
   
