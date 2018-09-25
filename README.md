@@ -9,7 +9,20 @@
   Note :
   
     Due to the recent change with Google OAuth,the amazon lightsail addresses or IPs are not valid origins for clients, so I have used xip.io, which is a service that provides a domain name for any IP address, to bypass this rule.
-
+  
+### installed software :
+  1. on ubuntu :
+    - Apache2
+    - mod_wsgi
+    - PostgreSQL
+    - pip
+  2. on pip :
+    - Flask
+    - http2lib
+    - requests
+    - sqlalchemy
+    - Psycopg2
+    
 
 # several steps to finish the Server Configuration process :-
 
